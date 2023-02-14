@@ -1,0 +1,30 @@
+<h1>Edit Track</h1>
+
+<%= form_with model: @track, url: track_path(@track), method: :patch do |form| %>
+
+  <div>
+  <%= form.label :title %>
+  </div>
+
+  <div>
+  <%= form.text_field :title %>
+  </div>
+
+  <p></p>
+
+  <div>
+  <%= form.label :body %>
+  </div>
+
+  <div>
+  <%= form.text_area :body %>
+  </div>
+
+  <div>
+  <%= link_to 'Delete', track_path(@track)%> <%= link_to 'Back', tracks_path %>
+  </div>
+  <p></p>
+
+  <%= form.submit %>
+
+<% end %>

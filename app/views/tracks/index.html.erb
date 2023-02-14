@@ -1,0 +1,18 @@
+<h1>Tracks</h1>
+
+<% @tracks.each do |track| %>
+  <div class="track">
+    <h4><%= track.title %></h4>
+    <p><%= track.body %></p>
+    <audio controls>
+      <source src="<%= track.file_url %>" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div>
+    <%= link_to 'Edit', edit_track_path(track) %>
+    <p></p>
+    </div>
+  </div>
+<% end %>
+<%= link_to 'New Track', new_track_path %>
+
